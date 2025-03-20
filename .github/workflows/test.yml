@@ -18,7 +18,10 @@ jobs:
         uses: CompeyDev/setup-rokit@v0.1.2
 
       - name: Install NPM dependencies
-        run: npm i
+        run: |
+          npm i
+          cd tests && npm i
+          cd ..
 
       - name: Run Tests
         run: |
