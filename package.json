@@ -1,0 +1,37 @@
+{
+  "name": "@rbxts/my-package",
+  "version": "1.0.0",
+  "description": "Extra utility methods for roblox-ts arrays",
+  "author": "me",
+  "main": "out/init.lua",
+  "scripts": {
+    "setup-rokit": "rokit trust lune-org/lune && rokit trust rojo-rbx/rojo && rokit install",
+    "build": "npm run setup-rokit && rbxtsc ",
+    "dev": "npm run build -- -w",
+    "prepublishOnly": "npm test",
+    "test": "npm run build && npm run build -- -p tests && rojo build tests -o tests/test-environment.rbxl && lune run tests tests/test-environment.rbxl"
+  },
+  "keywords": [
+    "roblox",
+    "rbxts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/me/my-repo.git"
+  },
+  "license": "ISC",
+  "types": "out/index.d.ts",
+  "files": [
+    "out",
+    "!**/*.tsbuildinfo"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/types": "^1.0.813",
+    "roblox-ts": "^3.0.0",
+    "typescript": "^5.5.3"
+  }
+}
