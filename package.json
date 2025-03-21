@@ -1,7 +1,7 @@
 {
   "name": "@rbxts/my-package",
   "version": "1.0.0",
-  "description": "Extra utility methods for roblox-ts arrays",
+  "description": "My package description",
   "author": "me",
   "main": "out/init.lua",
   "scripts": {
@@ -32,7 +32,7 @@
     "@rbxts/compiler-types": "^3.0.0-types.0",
     "@rbxts/types": "^1.0.813",
     "roblox-ts": "^3.0.0",
-    "typescript": "^5.5.3",
+    "typescript": "=5.5.3",
     "node": "^20.19.0"
   }
 }
