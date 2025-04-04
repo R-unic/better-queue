@@ -12,8 +12,9 @@
   },
   "devDependencies": {
     "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/flamework-meta-utils": "^1.0.3",
+    "@rbxts/runit": "^1.3.6",
     "@rbxts/types": "^1.0.813",
-    "@rbxts/runit": "^1.3.5",
     "rbxts-transformer-flamework": "^1.2.4",
     "roblox-ts": "^3.0.0",
     "typescript": "=5.5.3"
