@@ -1,8 +1,8 @@
 {
-  "name": "@rbxts/my-package",
-  "version": "1.0.0",
-  "description": "My package description",
-  "author": "me",
+  "name": "@rbxts/better-queue",
+  "version": "0.1.0",
+  "description": "Simple O(1) queue implementation for Roblox",
+  "author": "runicly",
   "main": "out/init.lua",
   "scripts": {
     "setup-rokit": "rokit trust lune-org/lune && rokit trust rojo-rbx/rojo && rokit install",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/me/my-repo.git"
+    "url": "git+https://github.com/R-unic/better-queue.git"
   },
   "license": "ISC",
   "types": "out/index.d.ts",
