@@ -1,42 +1,32 @@
 export class Queue<T extends defined> {
-  private readonly cache: Map<number, T>; // cause roblox-ts doesnt let u set specific array elements
   private first = 0;
   private last: number;
 
-  public constructor(cache: T[] = []) {
-    this.cache = cache as never;
+  public constructor(private readonly cache: T[] = []) {
     this.last = cache.size();
   }
 
   public enqueue(value: T): void {
-    const last = this.last++;
-    this.cache.set(last + 1, value);
+    this.cache[this.last++] = value;
   }
 
   public dequeue(): T | undefined {
     if (this.isEmpty()) return;
 
     const first = this.first++;
-    const value = this.cache.get(first + 1);
-    this.cache.delete(first);
+    const value = this.cache[first];
+    this.cache[first] = undefined!;
 
     return value;
   }
 
   public toArray(): T[] {
-    const result: T[] = [];
-    for (let i = this.first; i < this.last; i++) {
-      const value = this.cache.get(i + 1);
-      if (value === undefined) continue;
-      result.push(value);
-    }
-
-    return result;
+    return this.cache.filterUndefined();
   }
 
   public at(index: number): T | undefined {
     if (index < 0 || index >= this.size()) return;
-    return this.cache.get(this.first + index + 1);
+    return this.cache[this.first + index];
   }
 
   public isEmpty(): boolean {
